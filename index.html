@@ -41,11 +41,11 @@
          el: "#root",
          data: {
             payments: [
-               {name:"House Rant", amount: "15000", paid:true},
-               {name:"Electricity", amount: "1500", paid:false},
-               {name:"Gas", amount: "1200", paid:true},
-               {name:"Water", amount: "500", paid:false},
-               {name:"Internet", amount: "1000", paid:true},
+               {name:"House Rant", amount: 15000, paid:true},
+               {name:"Electricity", amount: 1500, paid:false},
+               {name:"Gas", amount: 1200, paid:true},
+               {name:"Water", amount: 500, paid:false},
+               {name:"Internet", amount: 1000, paid:true},
             ]
          },
          computed: {
@@ -57,7 +57,9 @@
             totalAmount:function(){
                var sum = 0;
                for(var i = 0; i<this.payments.length; i++){
-                 sum = sum+this.payments[i].amount;
+                 //sum +=this.payments[i].amount
+               sum +=this.payments[i].amount;
+              
                }
                return sum;
             }
