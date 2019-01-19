@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+::<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,30 +23,8 @@
 
 <body>
    <div id="root">
-      <!-- attribute and class binding  -->
-
-      <!-- <ul>
-         <li><a v-bind:class="{'active': activeLink == 'link1'}"v-bind:href="link1.url" v-bind:title="link1.title">{{link1.txt}}</a></li>
-         <li><a v-bind:class="{'active': activeLink == 'link2'}" v-bind:href="link2.url" v-bind:title="link2.title">{{link2.txt}}</a></li>
-         <p v-html="html">
-
-         </p>
-      </ul> -->
-      <!-- list or array rendaring  -->
       <H1>SKILLS</H1>
-      <!-- <hr>
-      <ul>
-         <li v-for="(skill,j) in skills"  v-if="skill.experience > 3">
-            <p>{{j+1}}.{{skill.name}}({{skill.experience}})</p>
-         </li>
-      </ul> -->
 
-      <!-- <p v-if="show">
-         showing ....
-      </p>
-      <p v-else="show">
-         not showing
-      </p> -->
       <ul>
          <li v-for="(skill,j) in skills">
             <p>{{skill}}</p>
@@ -66,10 +44,8 @@
          el: "#root",
          data: {
             newSkill: "",
-            skills: ["Html", "css"],
+            skills: ["Html", "CSS"],
 
-
-            // show: "true"
          },
          methods: {
                addSkill: function (){
@@ -79,21 +55,6 @@
             }
       });
 
-      //attribute and class binding 
-
-      // var app = new Vue({
-      //    el:"#root",
-      //    data: {
-      //      link1:{
-      //         txt:"Facebook", title:"Go to facebook", url:"https://facebook.com/"
-      //      },
-      //      link2:{
-      //         txt:"Youtube", title:"Go to youtube", url:"https://youtube.com/"
-      //      },
-      //      activeLink:"link1",
-      //      html:"<a href='https://tech4webs.com'>About me</a>"
-      //    }
-      // });
    </script>
 </body>
 
