@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Learn vue js with bangla </title>
+   <script src="vue.js"></script>
+   <style>
+
+      li{
+         list-style-type: none;
+      }
+      .active{
+         background-color: rgb(20, 136, 25);
+         color: aliceblue;
+         padding: 5px;
+
+      }
+   </style>
+</head>
+
+<body>
+   <div id="root">
+      <!-- attribute and class binding  -->
+
+      <!-- <ul>
+         <li><a v-bind:class="{'active': activeLink == 'link1'}"v-bind:href="link1.url" v-bind:title="link1.title">{{link1.txt}}</a></li>
+         <li><a v-bind:class="{'active': activeLink == 'link2'}" v-bind:href="link2.url" v-bind:title="link2.title">{{link2.txt}}</a></li>
+         <p v-html="html">
+
+         </p>
+      </ul> -->
+      <!-- list or array rendaring  -->
+      <H1>SKILLS</H1>
+      <!-- <hr>
+      <ul>
+         <li v-for="(skill,j) in skills"  v-if="skill.experience > 3">
+            <p>{{j+1}}.{{skill.name}}({{skill.experience}})</p>
+         </li>
+      </ul> -->
+
+      <!-- <p v-if="show">
+         showing ....
+      </p>
+      <p v-else="show">
+         not showing
+      </p> -->
+      <ul>
+         <li v-for="(skill,j) in skills">
+            <p>{{skill}}</p>
+         </li>
+      </ul>
+
+      <input type="text" v-model="newSkill">
+      <button @click="addSkill()">Add</button>
+
+   </div>
+
+
+   <script>
+      //list or array rendaring 
+
+      var app = new Vue({
+         el: "#root",
+         data: {
+            newSkill: "",
+            skills: ["Html", "css"],
+
+
+            // show: "true"
+         },
+         methods: {
+               addSkill: function (){
+                 this.skills.push(this.newSkill);
+                 this.newSkill= ""
+               }
+            }
+      });
+
+      //attribute and class binding 
+
+      // var app = new Vue({
+      //    el:"#root",
+      //    data: {
+      //      link1:{
+      //         txt:"Facebook", title:"Go to facebook", url:"https://facebook.com/"
+      //      },
+      //      link2:{
+      //         txt:"Youtube", title:"Go to youtube", url:"https://youtube.com/"
+      //      },
+      //      activeLink:"link1",
+      //      html:"<a href='https://tech4webs.com'>About me</a>"
+      //    }
+      // });
+   </script>
+</body>
+
+</html>
