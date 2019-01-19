@@ -18,6 +18,10 @@
          padding: 5px;
 
       }
+      p{
+         display: inline-block;
+         padding-right: 20px;
+      }
    </style>
 </head>
 
@@ -27,12 +31,13 @@
 
       <ul>
          <li v-for="(skill,j) in skills">
-            <p>{{skill}}</p>
+            <p>{{skill}}</p><button @click="removeSkill()">X</button>
          </li>
       </ul>
 
       <input type="text" v-model="newSkill">
       <button @click="addSkill()">Add</button>
+
 
    </div>
 
@@ -51,6 +56,9 @@
                addSkill: function (){
                  this.skills.push(this.newSkill);
                  this.newSkill= ""
+               },
+               removeSkill: function (i){
+                  this.skills.splice(i,1);
                }
             }
       });
