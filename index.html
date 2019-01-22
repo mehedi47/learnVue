@@ -15,24 +15,34 @@
 
 <body>
    <div id="root">
-      <H1>{{upperCaseName}}</H1>
+      <H1>{{name | upper}}</H1>
+      <H1>{{profession | lower}}</H1>
+      <H1>{{ today| bdFormat}}</H1>
    
    </div>
 
 
    <script>
 
+      Vue.filter("lower",function(lo){
+         return lo.toLowerCase();
+      });
+
       var app = new Vue({
          el: "#root",
          data: {
-               name : "mohammad mehedi hasan"
+               name : "mohammad mehedi hasan",
+               profession: "Software engnieer",
+               today: new Date()
          },
-         computed: {
-            upperCaseName: function () {
-             return this.name.toUpperCase();
-            }
+         filters:{
+            upper: function (up) {
+               return up.toUpperCase();
+            },
+            bdFormat: function (d){
+               return d.getUTCDate() + "-"+ (d.getUTCMonth()+1) + "-"+ d.getUTCFullYear();
          }
-  
+         }
       });
 
    </script>
