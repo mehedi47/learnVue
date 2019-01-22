@@ -15,23 +15,8 @@
 
 <body>
    <div id="root">
-      <H1>Paid payments</H1>
-      <hr>
-      <ul>
-         <li v-for="(payment,j) in payments">
-            <p>{{payment.name}}({{payment.amount}})
-         </li>
-      </ul>
-      <H1>UnPaid payments</H1>
-      <hr>
-      <ul>
-         <li v-for="(payment,j) in unPaidPayments">
-            <p>{{payment.name}}({{payment.amount}})
-         </li>
-      </ul>
-      <h1>Total amount: {{totalAmount}}</h1>
-
-
+      <H1>{{upperCaseName}}</H1>
+   
    </div>
 
 
@@ -40,28 +25,11 @@
       var app = new Vue({
          el: "#root",
          data: {
-            payments: [
-               {name:"House Rant", amount: 15000, paid:true},
-               {name:"Electricity", amount: 1500, paid:false},
-               {name:"Gas", amount: 1200, paid:true},
-               {name:"Water", amount: 500, paid:false},
-               {name:"Internet", amount: 1000, paid:true},
-            ]
+               name : "mohammad mehedi hasan"
          },
          computed: {
-            unPaidPayments: function () {
-             return this.payments.filter(function(p){
-               return !p.paid;
-             });
-            },
-            totalAmount:function(){
-               var sum = 0;
-               for(var i = 0; i<this.payments.length; i++){
-                 //sum +=this.payments[i].amount
-               sum +=this.payments[i].amount;
-              
-               }
-               return sum;
+            upperCaseName: function () {
+             return this.name.toUpperCase();
             }
          }
   
